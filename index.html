@@ -4,6 +4,88 @@
         <title>intaik</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/dark.css">
+        <style>
+            .body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f9;
+            }
+    
+            .chatbox {
+                width: 300px;
+                height: 400px;
+                display: flex;
+                flex-direction: column;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                background: #fff;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+    
+            .chatbox-header {
+                padding: 10px;
+                background: #0078d7;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+            }
+    
+            .chatbox-body {
+                flex: 1;
+                padding: 10px;
+                overflow-y: auto;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+    
+            .message {
+                padding: 8px;
+                border-radius: 4px;
+                background: #e1e1e1;
+                max-width: 80%;
+            }
+    
+            .message.user {
+                align-self: flex-end;
+                background: #0078d7;
+                color: white;
+            }
+    
+            .chatbox-footer {
+                padding: 10px;
+                display: flex;
+                gap: 10px;
+                border-top: 1px solid #ccc;
+            }
+    
+            .chatbox-footer input {
+                flex: 1;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                outline: none;
+            }
+    
+            .chatbox-footer button {
+                padding: 8px 12px;
+                background: #0078d7;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+    
+            .chatbox-footer button:hover {
+                background: #005bb5;
+            }
+        </style>
     </head>
     <body>
         <header>
@@ -24,6 +106,67 @@
             </div>
         
         </main>
+
+        <!-- Chatbox, needs some css -->
+        <div class="chatbox">
+            <div class="chatbox-header">Chatbox</div>
+            <div class="chatbox-body" id="chatboxBody">
+                <!-- Messages will appear here -->
+            </div>
+            <div class="chatbox-footer">
+                <input type="text" id="messageInput" placeholder="Type a message...">
+                <button id="sendButton">Send</button>
+            </div>
+        </div>
+    
+        <script>
+            const messageInput = document.getElementById('messageInput');
+            const sendButton = document.getElementById('sendButton');
+            const chatboxBody = document.getElementById('chatboxBody');
+    
+            sendButton.addEventListener('click', async () => {
+                const message = messageInput.value.trim();
+                if (message) {
+                    // Display user message
+                    const userMessageElement = document.createElement('div');
+                    userMessageElement.classList.add('message', 'user');
+                    userMessageElement.textContent = message;
+                    chatboxBody.appendChild(userMessageElement);
+                    chatboxBody.scrollTop = chatboxBody.scrollHeight;
+    
+                    // Clear input field
+                    messageInput.value = '';
+    
+                    // Send message to server
+                    try {
+                        const response = await fetch("http://localhost:3000/chat", {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({ message }),
+                        });
+                        const data = await response.json();
+    
+                        // Display AI response
+                        const aiMessageElement = document.createElement('div');
+                        aiMessageElement.classList.add('message');
+                        aiMessageElement.textContent = data.response;
+                        chatboxBody.appendChild(aiMessageElement);
+                        chatboxBody.scrollTop = chatboxBody.scrollHeight;
+                    } catch (error) {
+                        console.error("Error communicating with server:", error);
+                    }
+                }
+            });
+    
+    
+            messageInput.addEventListener('keypress', (event) => {
+                if (event.key === 'Enter') {
+                    sendButton.click();
+                }
+            });
+        </script> 
+        <!-- Chatbox, needs some css -->
+
         <footer></footer>
 
     <script src="js/progress.js"></script>
