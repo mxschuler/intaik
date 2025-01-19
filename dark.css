@@ -368,8 +368,9 @@ input {
 .port-image {
     padding: 2px;
     margin-top: 4px;
+    scale: 90%;    
 }
 
-.port-image:hover, .port-video:hover, .port-audio:hover {
-    
+.port-image:hover {
+    scale: 110%;
 }
