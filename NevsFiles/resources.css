@@ -1,0 +1,114 @@
+/* Use your existing root styles */
+:root {
+    --darkBlue: #3B4B5E;
+    --lightBlue: #A1B4C4;
+    --darkest: #171E26;
+    --lightest: #F1F4F8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+header {
+    width: 100%;
+    background-color: var(--darkBlue);
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 2fr 1fr;
+}
+
+#homepage-title {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#options-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Body and Footer Styles */
+body {
+    background-color: var(--lightBlue);
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1.5fr 9fr 1fr;
+    height: 100vh;
+}
+
+footer {
+    width: 100%;
+    background-color: var(--darkBlue);
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#credit-text {
+    padding-left: 10px;
+}
+
+/* Resources Section */
+.resources-section {
+    margin: 20px;
+}
+
+h2 {
+    font-size: 32px;
+    color: var(--darkBlue);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Individual Resource Box */
+.resource-box {
+    background-color: var(--lightest);
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.resource-box h3 {
+    font-size: 24px;
+    color: var(--darkBlue);
+}
+
+.resource-box p {
+    font-size: 16px;
+    color: var(--darkest);
+    line-height: 1.5;
+}
+
+.resource-box a {
+    color: var(--darkBlue);
+    text-decoration: none;
+}
+
+.resource-box a:hover {
+    text-decoration: underline;
+}
+
+/* Button styling (optional) */
+button {
+    background-color: var(--darkBlue);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: var(--darkest);
+}
