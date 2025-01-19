@@ -1,0 +1,118 @@
+:root {
+    --darkBlue: #3B4B5E;
+    --lightBlue: #A1B4C4;
+    --darkest: #171E26;
+    --lightest: #F1F4F8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.celebrity-image {
+    width: 240px; /* Set a fixed width */
+    height: 240px; /* Set a fixed height */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensures the image covers the box area without distortion */
+    margin-bottom: 20px; /* Add space below the image */
+    display: block;
+    margin-left: auto;
+    margin-right: auto; /* Center the image horizontally */
+}
+
+header {
+    width: 100%;
+    background-color: var(--darkBlue);
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 2fr 1fr;
+}
+
+#homepage-title {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#options-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-color: var(--lightBlue);
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1.5fr 9fr 1fr;
+    height: 100vh;
+}
+
+footer {
+    width: 100%;
+    background-color: var(--darkBlue);
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#credit-text {
+    padding-left: 10px;
+}
+
+#middle-container {
+    position: relative;
+
+}
+
+/* Drug section styles */
+.drug-section {
+    margin: 20px;
+}
+
+.drug-celebrity-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%; /* Ensures the celebrity box fills horizontally */
+}
+
+.celebrity-box {
+    background-color: var(--lightest);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Stack image, name, and text vertically */
+    align-items: center; /* Center align content */
+    width: 100%;
+    display: none; /* Hide all boxes initially */
+}
+
+.celebrity-box:first-child {
+    display: block; /* Show the first box by default */
+}
+
+.celebrity-content {
+    text-align: center; /* Align the text to the center */
+}
+
+button {
+    background-color: var(--darkBlue);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    align-self: center;
+}
+
+button:hover {
+    background-color: var(--darkest);
+}
