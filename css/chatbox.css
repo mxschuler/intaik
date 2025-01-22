@@ -1,0 +1,121 @@
+.chatbox {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-width: 0;
+}
+
+.chatbox-header {
+    padding: 10px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    user-select: none;
+}
+
+.chatbox-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    padding: 8px;
+    border-radius: 4px;
+    background: #e1e1e1;
+    max-width: 80%;
+}
+
+#messageInput {
+    background-color: var(--lightBlue);
+}
+
+.message.user {
+    align-self: flex-end;
+    background-color: var(--lightBlue);
+    color: white;
+}
+
+.chatbox-footer {
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.chatbox-footer input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+.chatbox-footer button {
+    padding: 8px 12px;
+    background-color: var(--darkest);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.chatbox-footer button:hover {
+    background-color: var(--darkest);
+}
+
+#sendButton {
+    user-select: none;
+}
+
+input {
+    user-select: none;
+}
+
+::placeholder {
+    color: white;
+}
+
+#middle-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Take up full width */
+    height: 100%; /* Adjust height to fit within the screen without disturbing other sections */
+    max-height: 100%; /* Optional: Define a max-height for better control */
+    overflow: hidden; /* Hide overflow from the parent container */
+}
+
+#chatboxBody {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto; /* Allow vertical scrolling if content exceeds */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 80%; /* Keep chat content contained */
+}
+
+/* Style for the chatbox scrollbar */
+#chatboxBody::-webkit-scrollbar {
+    width: 2px; /* Set the width of the scrollbar */
+}
+
+#chatboxBody::-webkit-scrollbar-track {
+    background: var(--darkest); /* Dark background for the scrollbar track */
+    border-radius: 10px; /* Rounded corners for the track */
+}
+
+#chatboxBody::-webkit-scrollbar-thumb {
+    background: var(--lightBlue); /* Light blue color for the thumb */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Optional: Add a subtle shadow for better contrast */
+}
+
+/* Optional: Style the scrollbar when hovered */
+#chatboxBody::-webkit-scrollbar-thumb:hover {
+    background: var(--lightest); /* Lighter color for the thumb on hover */
+}

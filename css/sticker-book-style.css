@@ -1,0 +1,150 @@
+:root{
+    --darkBlue: #3B4B5E;
+    --lightBlue: #A1B4C4;
+    --darkest: #171E26;
+    --lightest: #F1F4F8
+}
+
+#homepage-title{
+    user-select: none;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    /*user-select: none;*/
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    user-select: none;
+}
+
+header {
+    width: 100%;
+    background-color: var(--darkest);
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 5px;
+
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 2fr 1fr;
+}
+
+#header-text-ai {
+    color: red;
+    font-size: 80px;
+}
+
+.header-text {
+    font-size: 80px;
+}
+
+#homepage-title {
+    font-size: 40px;
+    display: flex;
+    /* center */
+    justify-content: center;
+    align-items: center;
+}
+
+#options-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--darkest);
+    padding: 0px;
+    border-radius: 10px; /* Optional: round the corners of the options bar */
+}
+
+.tab {
+    padding: 6px 12px;
+    margin: 5px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+/* Hover effect for the tabs */
+.tab:hover {
+    background-color: var(--lightBlue);
+    scale: 1.18;
+    border-radius: 15px;
+}
+
+/* Active tab (you can use JavaScript to dynamically set the active tab) */
+.tab.active {
+    background-color: var(--lightBlue);
+    color: var(--darkest);
+    font-weight: bold;
+}
+
+
+
+
+body {
+    background-color: var(--darkBlue);
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1.5fr 9fr 1fr;
+    height: 100%;
+    width: 100%;
+}
+
+
+footer {
+    width: 100%;
+    background-color: var(--darkest);
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    user-select: none;
+}
+
+#credit-text{
+    padding-left: 10px;
+}
+
+
+
+
+#middle-container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.div-containers {
+    height: 80%;
+    width: 80%;
+}
+
+#sticker-pkg {
+    grid-column: 2; /* Ensure the image is placed in the second column */
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* Make the image fill the container */
+}
+
+
+
+
+
+
+
+
+
+
+
+
